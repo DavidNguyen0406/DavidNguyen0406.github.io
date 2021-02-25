@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sample</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <!-- CSS Code -->
+    <link rel="stylesheet" href="/asset/font/Font-awesome/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Javascript for each modal containing a different pic. This code was written so that you don't have to write multiple modal divs -->
+    <script>
+        $(document).ready(function () {
+            var $lightbox = $('#lightbox');
+            $('[data-target="#lightbox"]').on('click', function (event) {
+                var $img = $(this).find('img'),
+                    src = $img.attr('src'),
+                    alt = $img.attr('alt'),
+                    css = {
+                        'maxWidth': $(window).width() - 100,
+                    };
+                $lightbox.find('img').attr('src', src);
+                $lightbox.find('img').attr('alt', alt);
+                $lightbox.find('img').css(css);
+            });
+            $lightbox.on('shown.bs.modal', function (e) {
+                var $img = $lightbox.find('img');
+                $lightbox.find('.modal-dialog').css({ 'width': $img.width() });
+                $lightbox.find('.close').removeClass('hidden');
+            });
+        });
+
+    </script>
+</head>
+
+
+<body>
+
+    <!--Navigation Bar-->
+    <div class="sticky">
+        <nav class="navbar navbar-inverse sticky">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"><b style="font-size: 1.5em;">N</b>GUYỄN HOÀNG'S PORTFOLIO</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="#" class="navbar-pages">Giới thiệu</a></li>
+                    <li><a href="#kinh-nghiem" class="navbar-pages">Kinh nghiệm</a></li>
+                    <li><a href="#logo" class="navbar-pages">Logo</a></li>
+                    <li><a href="#quang-cao" class="navbar-pages">Quảng cáo</a></li>
+                    <li><a href="#in-an" class="navbar-pages">In ấn</a></li>
+                    <li><a href="#lien-he" class="navbar-contact">Liên hệ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!--Navigation Bar-->
+
+    <!--Giới Thiệu-->
+    <div class="dark-background">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 align-center">
+                    <img src="/images/about-me-01.png" style="width: 100%;">
+                </div>
+                <div class="col-sm-7 vertical-align">
+                    <p class="about-me">Tôi là</p>
+                    <h1>Nguyễn Hoàng</h1>
+                    <q>Thiết kế Đồ họa <i>(1 năm kinh nghiệm)</i> </q>
+                    <p> <b>Tự học thiết kế</b>, tôi tình cờ phát hiện được đam mê của mình và quyết định theo nghề dù
+                        vốn là một
+                        cử nhân
+                        <i>Quản trị Kinh doanh</i>
+                    </p>
+                    <p> Sau khi thất nghiệp do COVID (2020), tôi lại <i>tiếp tục nghiên cứu viết code trong 2 tháng</i>
+                        và hoàn
+                        thành website này </p>
+                    <p> <b>Định hướng lâu dài</b> của tôi là phát triển chuyên sâu hơn về mảng :<br>
+                        <b style="color:#4172d8">Graphic Design & Front-end develop</b>
+                    </p>
+                    <a href="/asset/file/file.png" download>
+                        <button class="button-a"> Tải CV</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Giới Thiệu-->
+
+    <!--Kinh Nghiệm-->
+    <div class="avoid-navbar">
+        <span id="kinh-nghiem"> &nbsp; </span>
+    </div>
+    <div id="kinh-nghiem" class="light-background">
+        <div class="container">
+            <div class="row align-center overlay-parent">
+                <h2>Kinh nghiệm</h2>
+                <p class="overlay-child">Kinh nghiệm</p>
+            </div>
+            <div class="row align-center">
+                <p class="section-description">Thiết kế các thành phẩm 2D, in ấn, landing pages...theo nhu cầu.
+                    <br> Đồng thời phục vụ các chiến lược Digital Marketing
+                </p>
+            </div>
+            <hr>
+            <div class="skill-section">
+                <div class="row">
+                    <div class="col-sm-4 skill-box">
+                        <div class="skill-content">
+                            <i class="far fa-fill-drip"></i>
+                            <p class="main-skill">Graphic Design</p>
+                            <span></span>
+                            <p>Thiết kế 2D và các ấn phẩm như backdrop, brochure, business card...</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 skill-box">
+                        <div class="skill-content">
+                            <i class="far fa-desktop"></i>
+                            <p class="main-skill">Web Design</p>
+                            <span></span>
+                            <p>Thiết kế Landing Pages, chỉnh sửa giao diện qua HTML, CSS</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 skill-box">
+                        <div class="skill-content">
+                            <i class="far fa-funnel-dollar"></i>
+                            <p class="main-skill">Digital Marketing</p>
+                            <span></span>
+                            <p>Quản lý các trang social media, chạy quảng cáo, thực hiện SEO onpage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Kinh nghiệm-->
+
+    <!--Logo-->
+    <div class="avoid-navbar">
+        <span id="logo"> &nbsp; </span>
+    </div>
+    <div class="light-background">
+        <div class="container">
+            <div class="row align-center overlay-parent">
+                <h2>Logo</h2>
+                <p class="overlay-child">Logo</p>
+            </div>
+            <div class="row align-center">
+                <p class="section-description">Logo được thiết kế độc đáo, đa dạng về phong cách <br>
+                    Truyền tải được cảm xúc, thông điệp cũng như đáp ứng về mặt mỹ thuật.
+                </p>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-4 image-slide">
+                    <img src="/images/Logo Samples_logo-kanoko-boutique.png" class="image-top">
+                    <img src="/images/Mockup Logo Samples_kanoko-boutique.png" class="image-bottom">
+                </div>
+                <div class="col-sm-4 image-slide">
+                    <img src="/images/Logo Samples_logo-mikazuki-villa.png" class="image-top">
+                    <img src="/images/Mockup Logo Samples_mikazuki-villa.png" class="image-bottom">
+                </div>
+                <div class="col-sm-4 image-slide">
+                    <img src="/images/Logo Samples_logo-natsume-library.png" class="image-top">
+                    <img src="/images/Mockup Logo Samples_natsume-library.png" class="image-bottom">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Logo-->
+
+    <!--Quảng cáo-->
+    <div class="avoid-navbar">
+        <span id="quang-cao"> &nbsp; </span>
+    </div>
+    <div class="dark-background">
+        <div class="container">
+            <div class="row align-center overlay-parent">
+                <h2>Quảng cáo</h2>
+                <p class="overlay-child">Quảng cáo</p>
+            </div>
+            <div class="row align-center">
+                <p class="section-description">Đa phương tiện.<br> Sử dụng để đăng web, social media và các
+                    chiến dịch digital
+                    marketing
+                </p>
+            </div>
+            <hr>
+            <section class="row">
+                <div class="col-sm-4 panel-frame">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
+                                <img src="/images/Vietnam Travel Corp - Poster - Cung đường vàng Nhật bản T10-11-12-01.png"
+                                    alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
+                                <img src="/images/Điện Máy Xanh - Voucher - Du lịch Nhật (Mặt trước).png" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
+                                <img src="/images/EduVisa - Facebook Ads - ICEAO TORONTO-01.png" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
+                                <img src="/images/VietnamTravelCorp - Facebook Ads - SIC- MỸ - BỜ TÂY 8N7D- LOS - DIS OR SAN DIEAGO - LAS - SFO - VNM-01.png"
+                                    alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 panel-frame">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
+                                <img src="/images/Vietnam Travel Corp - Poster - Ngao Du Thượng Hải-01.png" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
+                                <img src="/images/VietnamTravelCorp - Facebook Ads - Princess Cruises-01.png" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
+                                <img src="/images/VietnamTravelCorp - Facebook Ads - VINPEARL LAND – CITY HOTEL-01.png"
+                                    alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 panel-frame">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
+                                <img src="/images/Vietnam Travel Corp - Poster - KHÁM PHÁ TRƯƠNG GIA GIỚI – PHƯỢNG HOÀNG CỔ TRẤN-01.png"
+                                    alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
+                                <img src="/images/VietnamTravelCorp - Facebook Ads - VI VU NHẬT BẢN T2 5N4Đ-01.png"
+                                    alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div id="lightbox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button style="transform: scale(1.5);" type="button" class="close" data-dismiss="modal"
+                                    aria-hidden="true">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+            </section>
+        </div>
+    </div>
+    <!--Quảng cáo-->
+
+    <!--In ấn-->
+    <div class="avoid-navbar">
+        <span id="in-an"> &nbsp; </span>
+    </div>
+    <div class="light-background">
+        <div class="container">
+            <div class="row align-center overlay-parent">
+                <h2>In ấn</h2>
+                <p class="overlay-child">In ấn</p>
+            </div>
+            <div class="row align-center">
+                <p class="section-description">Backdrop, banner cỡ lớn.<br> Phục vụ cho các sự kiện, gala dinner
+                </p>
+            </div>
+            <hr>
+            <section class="row">
+                <div class="col-sm-6 panel-frame">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
+                                <img src="/images/Gala Dinner - Prudential Q11-01.png" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
+                                <img src="/images/Backdrop - Viettinbank - Gala Dinner Phan Thiết 2019-08-02-01.png"
+                                    alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
+                                <img src="/images/Banner Treo xe- Prudential Q11-01.png" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 panel-frame">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
+                                <img src="/images/CJ VIETNAM&SG SAFETY VINA - Banner treo xe - Company Trip-01.png"
+                                    alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
+                                <img src="/images/Công ty - Backdrop - Gala Dinner_Khám phá đại ngàn-01.png" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <a href="#" class="zoom" data-toggle="modal" data-target="#lightbox">
+                                <img src="/images/Công ty - Backdrop - Gala Dinner_Phụ nữ là để yêu (Vers 1)-01.png"
+                                    alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div id="lightbox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"
+                                    aria-hidden="true">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal -->
+            </section>
+        </div>
+    </div>
+    <!--In ấn-->
+
+    <!--Liên hệ-->
+    <div class="avoid-navbar">
+        <span id="lien-he"> &nbsp; </span>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row align-center overlay-parent">
+                <h2>Liên hệ</h2>
+                <p class="overlay-child">Liên hệ</p>
+            </div>
+            <div class="row align-center">
+                <p class="section-description"> Điện thoại có thể liên lạc qua Viber/Zalo.</p>
+            </div>
+            <hr>
+            <div class="contact-section">
+                <div class="row">
+                    <div class="col-sm-4 contact-box">
+                        <div class="contact-icon hvr-outline-in">
+                            <a href="tel:0832796773" target="_blank" rel="nofollow"><i class="fas fa-phone"></i></a>
+                        </div>
+                        <p>+84 083 279 6773</p>
+                    </div>
+                    <div class="col-sm-4 contact-box">
+                        <div class="contact-icon hvr-outline-in">
+                            <a href="mailto:nghoang0406hcm@gmail.com" target="_blank" rel="nofollow"><i
+                                    class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        <p>nghoang0406hcm@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Liên hệ-->
+
+
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

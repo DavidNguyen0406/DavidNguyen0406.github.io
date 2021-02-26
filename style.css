@@ -585,13 +585,13 @@ footer hr {
 .navbar-inverse {
     margin: auto;
     margin-top: 40px;
-    width: 100%;
+    width: 70%;
     padding-left: 5%;
 }
 
-@media (min-width:768px) {
+@media (max-width:1600px) {
     .navbar-inverse {
-        width: 70%;
+        width: 90%;
     }
 }
 

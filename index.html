@@ -14,11 +14,9 @@
     <title>Nguyễn Hoàng's portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/asset/js/jquery-formated.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!-- CSS Code -->
-    <link rel="stylesheet" href="/asset/font/Font-awesome/css/all.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="/style.css">
@@ -49,17 +47,21 @@
 </head>
 
 
-<body>
-
+<header>
     <!--Navigation Bar-->
-    <div class="sticky">
-        <nav class="navbar navbar-inverse sticky">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#"><b style="font-size: 1.5em;">N</b>GUYỄN HOÀNG'S PORTFOLIO</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li><a href="#" class="navbar-pages">Giới thiệu</a></li>
+    <nav class="navbar navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><b style="font-size: 1.5em;">N</b>GUYỄN HOÀNG'S PORTFOLIO</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#gioi-thieu" class="navbar-pages">Giới thiệu</a></li>
                     <li><a href="#kinh-nghiem" class="navbar-pages">Kinh nghiệm</a></li>
                     <li><a href="#logo" class="navbar-pages">Logo</a></li>
                     <li><a href="#quang-cao" class="navbar-pages">Quảng cáo</a></li>
@@ -67,12 +69,18 @@
                     <li><a href="#lien-he" class="navbar-contact">Liên hệ</a></li>
                 </ul>
             </div>
-        </nav>
-    </div>
+        </div>
+    </nav>
     <!--Navigation Bar-->
+</header>
+
+<body>
 
     <!--Giới Thiệu-->
-    <div class="dark-background">
+    <div class="avoid-navbar">
+        <span id="gioi-thieu"> &nbsp; </span>
+    </div>
+    <div class="dark-background" id="gioi-thieu">
         <div class="container">
             <div class="row">
                 <div class="col-sm-5 align-center">
@@ -433,6 +441,18 @@
                 navbar.classList.remove("sticky");
             }
         }
+    </script>
+    <script type='text/javascript'>
+
+        $(document).click(function (event) {
+            var clickover = $(event.target);
+            var $navbar = $(".navbar-collapse");
+            var _opened = $navbar.hasClass("in");
+            if (_opened === true && !clickover.hasClass("navbar-toggle")) {
+                $navbar.collapse('hide');
+            }
+        });
+
     </script>
 
 </body>

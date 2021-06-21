@@ -390,7 +390,6 @@ canvas {
 
 .team-description {
     display: block;
-    margin-block-start: 0em;
     font-size: 1em;
     line-height: 1.6em;
     color: var(--text-normal-color);

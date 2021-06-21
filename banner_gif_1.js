@@ -3,7 +3,8 @@
 var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
-		{name:"banner_gif_1_atlas_", frames: [[0,0,689,572],[1174,0,228,187],[691,0,481,471],[691,473,393,77]]}
+		{name:"banner_gif_1_atlas_", frames: [[0,0,1500,1055]]},
+		{name:"banner_gif_1_atlas_2", frames: [[0,0,689,572],[1174,0,228,187],[691,0,481,471],[691,473,393,77]]}
 ];
 
 
@@ -12,34 +13,35 @@ lib.ssMetadata = [
 
 
 (lib.flash0ai = function() {
-	this.initialize(img.flash0ai);
-}).prototype = p = new cjs.Bitmap();
-p.nominalBounds = new cjs.Rectangle(0,0,1708,1000);
-
-
-(lib.flash0ai_1 = function() {
 	this.initialize(ss["banner_gif_1_atlas_"]);
 	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
 
 
 
+(lib.flash0ai_1 = function() {
+	this.initialize(ss["banner_gif_1_atlas_2"]);
+	this.gotoAndStop(0);
+}).prototype = p = new cjs.Sprite();
+
+
+
 (lib.flash0ai_2 = function() {
-	this.initialize(ss["banner_gif_1_atlas_"]);
+	this.initialize(ss["banner_gif_1_atlas_2"]);
 	this.gotoAndStop(1);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.flash0ai_3 = function() {
-	this.initialize(ss["banner_gif_1_atlas_"]);
+	this.initialize(ss["banner_gif_1_atlas_2"]);
 	this.gotoAndStop(2);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.flash0ai_4 = function() {
-	this.initialize(ss["banner_gif_1_atlas_"]);
+	this.initialize(ss["banner_gif_1_atlas_2"]);
 	this.gotoAndStop(3);
 }).prototype = p = new cjs.Sprite();
 // helper functions:
@@ -123,7 +125,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 	this._renderFirstFrame();
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(750,360,958,640);
+p.nominalBounds = new cjs.Rectangle(750,360,834,695);
 // library properties:
 lib.properties = {
 	id: 'AAE1E8A77C475848B327CBA92B9ABA87',
@@ -133,8 +135,8 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/flash0ai.png", id:"flash0ai"},
-		{src:"images/banner_gif_1_atlas_.png", id:"banner_gif_1_atlas_"}
+		{src:"images/banner_gif_1_atlas_.png?1624268545229", id:"banner_gif_1_atlas_"},
+		{src:"images/banner_gif_1_atlas_2.png?1624268545229", id:"banner_gif_1_atlas_2"}
 	],
 	preloads: []
 };

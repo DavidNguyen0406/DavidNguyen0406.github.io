@@ -12,63 +12,62 @@
 
 
     <!-- write your code here -->
-    <style>
-        #animation_container {
-            position: absolute;
-            margin: auto;
-            left: 0;
-            right: 0;
-        }
-    </style>
-    <script>
-        // change the default namespace for the CreateJS libraries:
-        var createjs_01 = createjs_01 || {};
-        var createjs = createjs_01;
-    </script>
-    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-    <script src="banner_gif_1.js?1624231710285"></script>
-    <script>
-        var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
-        function init() {
-            canvas = document.getElementById("canvas");
-            anim_container = document.getElementById("animation_container");
-            dom_overlay_container = document.getElementById("dom_overlay_container");
-            var comp = AdobeAn.getComposition("AAE1E8A77C475848B327CBA92B9ABA87");
-            var lib_01 = comp.getLibrary();
-            var loader = new createjs_01.LoadQueue(false);
-            loader.addEventListener("fileload", function (evt) { handleFileLoad(evt, comp) });
-            loader.addEventListener("complete", function (evt) { handleComplete(evt, comp) });
-            var lib_01 = comp.getLibrary();
-            loader.loadManifest(lib_01.properties.manifest);
-        }
-        function handleFileLoad(evt, comp) {
-            var images_01 = comp.getImages();
-            if (evt && (evt.item.type == "image")) { images_01[evt.item.id] = evt.result; }
-        }
-        function handleComplete(evt, comp) {
-            //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-            var lib_01 = comp.getLibrary();
-            var ss = comp.getSpriteSheet();
-            var queue = evt.target;
-            var ssMetadata = lib_01.ssMetadata;
-            for (i = 0; i < ssMetadata.length; i++) {
-                ss[ssMetadata[i].name] = new createjs.SpriteSheet({ "images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames })
-            }
-            exportRoot = new lib_01.banner_gif_1();
-            stage = new lib_01.Stage(canvas);
-            //Registers the "tick" event listener.
-            fnStartAnimation = function () {
-                stage.addChild(exportRoot);
-                createjs_01.Ticker.framerate = lib_01.properties.fps;
-                createjs_01.Ticker.addEventListener("tick", stage);
-            }
-            //Code to support hidpi screens and responsive scaling.
-            AdobeAn.makeResponsive(true, 'both', false, 1, [canvas, anim_container, dom_overlay_container]);
-            AdobeAn.compositionLoaded(lib_01.properties.id);
-            fnStartAnimation();
-        }
-    </script>
-    <!-- write your code here -->
+<style>
+    #animation_container {
+      position:relative;
+      margin:auto;
+      left:0;right:0;
+    }
+  </style>
+  <script>
+      // change the default namespace for the CreateJS libraries:
+      var createjs_01 = createjs_01||{};
+      var createjs = createjs_01;
+  </script>
+  <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+  <script src="banner_gif_1.js"></script>
+  <script>
+  var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+  function init() {
+      canvas = document.getElementById("canvas");
+      anim_container = document.getElementById("animation_container");
+      dom_overlay_container = document.getElementById("dom_overlay_container");
+      var comp=AdobeAn.getComposition("AAE1E8A77C475848B327CBA92B9ABA87");
+      var lib_01=comp.getLibrary();
+      var loader = new createjs_01.LoadQueue(false);
+      loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+      loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+      var lib_01=comp.getLibrary();
+      loader.loadManifest(lib_01.properties.manifest);
+  }
+  function handleFileLoad(evt, comp) {
+      var images_01=comp.getImages();	
+      if (evt && (evt.item.type == "image")) { images_01[evt.item.id] = evt.result; }	
+  }
+  function handleComplete(evt,comp) {
+      //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+      var lib_01=comp.getLibrary();
+      var ss=comp.getSpriteSheet();
+      var queue = evt.target;
+      var ssMetadata = lib_01.ssMetadata;
+      for(i=0; i<ssMetadata.length; i++) {
+          ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+      }
+      exportRoot = new lib_01.banner_gif_1();
+      stage = new lib_01.Stage(canvas);	
+      //Registers the "tick" event listener.
+      fnStartAnimation = function() {
+          stage.addChild(exportRoot);
+          createjs_01.Ticker.framerate = lib_01.properties.fps;
+          createjs_01.Ticker.addEventListener("tick", stage);
+      }	    
+      //Code to support hidpi screens and responsive scaling.
+      AdobeAn.makeResponsive(true,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+      AdobeAn.compositionLoaded(lib_01.properties.id);
+      fnStartAnimation();
+  }
+  </script>
+  <!-- write your code here -->
 
 </head>
 
@@ -77,16 +76,11 @@
 
     <!--Banner Gif 1-->
     <h2>Banner Gif 1</h2>
-    <div class="">
-        <div id="animation_container"
-            style="background-color:rgba(255, 255, 255, 1.00); width:1500px; height:720px;position: relative;">
-            <canvas id="canvas" width="1500" height="720"
-                style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
-            <div id="dom_overlay_container"
-                style="pointer-events:none; overflow:hidden; width:1500px; height:720px; position: relative; left: 0px; top: 0px; display: block;">
-            </div>
-        </div>
-    </div>
+	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:1500px; height:720px">
+		<canvas id="canvas" width="1500" height="720" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1500px; height:720px; position: absolute; left: 0px; top: 0px; display: block;">
+		</div>
+	</div>
     <!--Banner Gif 1-->
 
     <!--Banner Gif 2-->
@@ -122,7 +116,7 @@
                     <div class="reasons-content">
                         <img src="/asset/icons-02.svg" alt="Dẫn đầu xu hướng thẩm mỹ tầng sinh môn"
                             class="reasons-icons">
-                        <p class="reasons-text">DẪN ĐẦU XU HƯỚNG<br> VỀ THẨM MỸ TẦNG SINH MÔN</p>
+                        <p class="reasons-text">DẪN ĐẦU XU HƯỚNG<br> VỀ THẨM MỸ</p>
                     </div>
                 </div>
                 <div class="col-sm-3 reasons-box">
@@ -136,9 +130,61 @@
                     <div class="reasons-content">
                         <img src="/asset/icons-04.svg" alt="Hàng nghìn khách hàng ưu tiên lựa chọn"
                             class="reasons-icons">
-                        <p class="reasons-text">HÀNG NGHÌN KHÁCH HÀNG<br>ƯU TIÊN LỰA CHỌN</p>
+                        <p class="reasons-text">KHÁCH HÀNG<br>ƯU TIÊN LỰA CHỌN</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <!--Banner 4 lý do-->
+    <!--Đội ngũ bác sĩ-->
+    <h2>Đội ngũ bác sĩ</h2>
+    <div class="container">
+        <div class="team-section">
+            <div class="row">
+                <div class="col-sm-3 team-box">
+                    <div class="team-content">
+                        <img src="/asset/doi_ngu_bac_si_2_bac_si_nam.svg" alt="Được Bộ Y Tế Cấp Phép Hoạt Động" class="team-icons">
+                        <p class="team-title">BS. TRẦN NGỌC HẢI</p>
+                        <p class="team-description">
+                            Ban Cố Vấn<br>
+                            BS CK II - Sản Phụ Khoa<br>
+                            Phó Giám Đốc BV Từ Dũ</p>
+                    </div>
+                </div>
+                 
+                <div class="col-sm-3 team-box">
+                    <div class="team-content">
+                        <img src="/asset/doi_ngu_bac_si_1_bac_si_nu.svg" alt="Được Bộ Y Tế Cấp Phép Hoạt Động" class="team-icons">
+                        <p class="team-title">BS. ĐỖ THỊ LỆ CHI</p>
+                        <p class="team-description">
+                            Ban Cố Vấn<br>
+                            BS CK II - Sản Phụ Khoa<br>
+                            Nguyên BS Phó Trưởng Khoa BV Từ Dũ</p>
+                    </div>
+                </div>
+                 
+                <div class="col-sm-3 team-box">
+                    <div class="team-content">
+                        <img src="/asset/doi_ngu_bac_si_1_bac_si_nu.svg" alt="Được Bộ Y Tế Cấp Phép Hoạt Động" class="team-icons">
+                        <p class="team-title">BS. NGUYỄN THỊ TUYẾT ANH</p>
+                        <p class="team-description">
+                            BS CKII - Sản Phụ Khoa<br>
+                            Nguyên BS BV Đại Học Y Dược TP.HCM<br>
+                    </div>
+                </div>
+                 
+                <div class="col-sm-3 team-box">
+                    <div class="team-content">
+                        <img src="/asset/doi_ngu_bac_si_1_bac_si_nu.svg" alt="Được Bộ Y Tế Cấp Phép Hoạt Động" class="team-icons">
+                        <p class="team-title">BS. HOÀNG THỊ THỦY</p>
+                        <p class="team-description">
+                            BS CKI - Sản Phụ Khoa<br>
+                            Nguyên BS BV Từ Dũ<br>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@ var p; // shortcut to reference prototypes
 var lib={};var ss={};var img={};
 lib.ssMetadata = [
 		{name:"banner_gif_1_atlas_", frames: [[0,0,1500,1055]]},
-		{name:"banner_gif_1_atlas_2", frames: [[0,0,689,572],[1174,0,228,187],[691,0,481,471],[691,473,393,77]]}
+		{name:"banner_gif_1_atlas_2", frames: [[0,0,770,548],[483,550,228,187],[0,550,481,471],[483,739,393,77]]}
 ];
 
 
@@ -13,14 +13,14 @@ lib.ssMetadata = [
 
 
 (lib.flash0ai = function() {
-	this.initialize(ss["banner_gif_1_atlas_"]);
+	this.initialize(ss["banner_gif_1_atlas_2"]);
 	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
 
 
 
 (lib.flash0ai_1 = function() {
-	this.initialize(ss["banner_gif_1_atlas_2"]);
+	this.initialize(ss["banner_gif_1_atlas_"]);
 	this.gotoAndStop(0);
 }).prototype = p = new cjs.Sprite();
 
@@ -93,32 +93,32 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 (lib.banner_gif_1 = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
-	// Price_Text
-	this.instance = new lib.Price_Text();
-	this.instance.setTransform(1354,616.5,1,1,0,0,0,114,93.5);
+	// Text
+	this.instance = new lib.flash0ai();
+	this.instance.setTransform(75,32);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance).to({scaleX:1.0717,scaleY:1.0717,y:616.55},14).to({scaleX:1,scaleY:1,y:616.5},15).wait(31));
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(60));
+
+	// Price_Text
+	this.instance_1 = new lib.Price_Text();
+	this.instance_1.setTransform(1354,616.5,1,1,0,0,0,114,93.5);
+
+	this.timeline.addTween(cjs.Tween.get(this.instance_1).to({scaleX:1.0717,scaleY:1.0717,y:616.55},14).to({scaleX:1,scaleY:1,y:616.5},15).wait(31));
 
 	// Button
-	this.instance_1 = new lib.Button();
-	this.instance_1.setTransform(453.8,656.95,1,1,0,0,0,196.5,38.5);
+	this.instance_2 = new lib.Button();
+	this.instance_2.setTransform(453.8,656.95,1,1,0,0,0,196.5,38.5);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_1).to({regX:196.6,regY:38.6,scaleX:1.0555,scaleY:1.0555,x:453.95,y:657.1},14).to({regX:196.5,regY:38.5,scaleX:1,scaleY:1,x:453.8,y:656.95},15).wait(31));
+	this.timeline.addTween(cjs.Tween.get(this.instance_2).to({regX:196.6,regY:38.6,scaleX:1.0555,scaleY:1.0555,x:453.95,y:657.1},14).to({regX:196.5,regY:38.5,scaleX:1,scaleY:1,x:453.8,y:656.95},15).wait(31));
 
 	// Price_border
-	this.instance_2 = new lib.flash0ai_3();
-	this.instance_2.setTransform(1103,428);
-
-	this.timeline.addTween(cjs.Tween.get(this.instance_2).wait(60));
-
-	// Text
-	this.instance_3 = new lib.flash0ai_1();
-	this.instance_3.setTransform(108,22);
+	this.instance_3 = new lib.flash0ai_3();
+	this.instance_3.setTransform(1103,428);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance_3).wait(60));
 
 	// Background
-	this.instance_4 = new lib.flash0ai();
+	this.instance_4 = new lib.flash0ai_1();
 
 	this.timeline.addTween(cjs.Tween.get(this.instance_4).wait(60));
 
@@ -135,8 +135,8 @@ lib.properties = {
 	color: "#FFFFFF",
 	opacity: 1.00,
 	manifest: [
-		{src:"images/banner_gif_1_atlas_.png?1624268545229", id:"banner_gif_1_atlas_"},
-		{src:"images/banner_gif_1_atlas_2.png?1624268545229", id:"banner_gif_1_atlas_2"}
+		{src:"images/banner_gif_1_atlas_.png", id:"banner_gif_1_atlas_"},
+		{src:"images/banner_gif_1_atlas_2.png", id:"banner_gif_1_atlas_2"}
 	],
 	preloads: []
 };
